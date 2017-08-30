@@ -1,6 +1,6 @@
-import {Sample} from '../src/sample';
+import { Sample } from '../src/sample';
 
-import * as assert from 'power-assert';
+import * as assert from 'assert';
 
 describe('Sample', () => {
     let sut: Sample;
@@ -9,15 +9,15 @@ describe('Sample', () => {
         sut = new Sample();
     });
 
-    describe('.status', () => {
-        it('は、trueであるべき', () => {
-            assert.ok(sut.status === true);
+    describe('.statusは、', () => {
+        it('trueであるべき', () => {
+            assert(sut.status === true);
         });
     });
 
-    describe('#say()', () => {
-        it('は、"Hello TDDBC!"が返ってくるべき', () => {
-            assert.equal(sut.say() , 'Hello TDDBC!');
+    describe('#say()は、', () => {
+        it('"Hello TDDBC!"が返ってくるべき', () => {
+            assert(sut.say() === 'Hello TDDBC!');
         });
     });
 });
