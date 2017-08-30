@@ -33,11 +33,13 @@
     "source-map-support": "^0.4.16",
     "ts-node": "^3.3.0",
     "tslint": "^5.7.0",
-    "typescript": "^2.5.1"
+    "typescript": "^2.5.1",
+    "typescript-formatter": "^6.0.0"
   },
   "scripts": {
     "lint": "tslint -c tslint.json 'src/**/*.ts' 'test/**/*.ts'",
     "clean": "del coverage",
+    "fmt": "tsfmt -r",
     "pretest": "npm run lint",
     "test": "mocha --compilers ts:espower-typescript/guess 'test/**/*.ts'",
     "watch": "mocha --compilers ts:espower-typescript/guess --watch 'test/**/*.ts'",
