@@ -7,10 +7,12 @@
   },
   "main": "src/sample.js",
   "license": "MIT",
+  "directories": {
+    "test": "test"
+  },
   "devDependencies": {
     "@types/mocha": "^2.2.42",
-    "@types/node": "^8.0.25",
-    "@types/power-assert": "^1.4.29",
+    "@types/node": "^8.0.26",
     "@types/source-map": "^0.5.1",
     "del-cli": "^1.1.0",
     "espower-typescript": "^8.1.0",
@@ -24,9 +26,11 @@
   },
   "scripts": {
     "lint": "tslint -c tslint.json 'src/**/*.ts' 'test/**/*.ts'",
+    "clean": "del coverage",
     "pretest": "npm run lint",
-    "test": "mocha --compilers ts:ts-node/register --require source-map-support/register --full-trace --bail",
-    "watch": "mocha --compilers ts:ts-node/register --require source-map-support/register --watch",
-    "coverage": "del coverage && nyc --reporter html --reporter=text --extension .ts npm test"
+    "test": "mocha --compilers ts:espower-typescript/guess 'test/**/*.ts'",
+    "watch": "mocha --compilers ts:espower-typescript/guess --watch 'test/**/*.ts'",
+    "test-coverage": "mocha --compilers ts:ts-node/register --require source-map-support/register",
+    "coverage": "npm run clean && nyc --reporter html --reporter text --extension .ts npm run test-coverage"
   }
 }
