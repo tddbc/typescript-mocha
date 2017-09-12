@@ -1,5 +1,5 @@
 export class Sample {
-    constructor(public status: boolean = true) {
+    constructor(public status = true) {
     }
 
     public say(): string {
