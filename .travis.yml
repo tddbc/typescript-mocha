@@ -1,0 +1,17 @@
+language: node_js
+
+node_js:
+  - 'stable'
+  - '6'
+  - '4'
+
+sudo: false
+
+install:
+  - npm uninstall typescript --no-save
+  - npm uninstall tslint --no-save
+  - npm install
+
+cache:
+  directories:
+    - node_modules
