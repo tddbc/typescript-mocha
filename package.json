@@ -41,8 +41,8 @@
     "clean": "del coverage",
     "fmt": "tsfmt -r",
     "pretest": "npm run lint",
-    "test": "mocha --compilers ts:espower-typescript/guess 'test/**/*.ts'",
-    "watch": "mocha --compilers ts:espower-typescript/guess --watch 'test/**/*.ts'",
+    "test": "mocha --compilers ts:espower-typescript/guess \"test/**/*.ts\"",
+    "watch": "mocha --compilers ts:espower-typescript/guess --watch \"test/**/*.ts\"",
     "test-coverage": "mocha --compilers ts:ts-node/register --require source-map-support/register",
     "coverage": "npm run clean && nyc --reporter html --reporter text --extension .ts npm run test-coverage"
   }
